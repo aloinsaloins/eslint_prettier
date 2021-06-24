@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  node:
+    build: ./node
+    container_name: 'node-container'
+    volumes:
+        - $(local path)\source:/var/www/html/
+        - $(local path)\node\package.json:/var/www/package.json
+        # eslint設定ファイル
+        - $(local path)\node\.eslintrc.json:/var/www/html/.eslintrc.json
+        # prettier設定ファイル
+        - $(local path)\node\.prettierrc.json:/var/www/html/.prettierrc.json
+    #コンテナを起動させ続ける
+    tty: true

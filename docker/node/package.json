@@ -1,0 +1,13 @@
+{
+  "name": "myeslint",
+  "scripts": {
+    "format": "prettier --write /var/www/html/js/*.js",
+    "lint": "eslint --fix /var/www/html/js/*.js",
+    "fix": "npm run format && npm run lint"
+  },
+  "devDependencies": {
+    "eslint": "^7.28.0",
+    "eslint-config-prettier": "^8.3.0",
+    "prettier": "^2.3.0"
+  }
+}
